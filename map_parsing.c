@@ -74,7 +74,7 @@ void	map_parsing_plus(char *str, int *biggest_len,
 ** tab[2] = left_shift : minimum number of space present in front of a map line
 ** tab[3] = start_line : starting line number of the map in the .cub file
 */
-void	assign_labyrinth(int *tab, t_tree *tree)
+void	assign_map(int *tab, t_tree *tree)
 {
 	tree->parsing.fd = open((char const *)tree->parsing.file_path, O_RDONLY);
 	if (tree->parsing.fd == -1)
@@ -84,11 +84,11 @@ void	assign_labyrinth(int *tab, t_tree *tree)
 		error_central_map_parsing(3, 0, tree);
 	tree->parsing.lab[tab[0]] = NULL;
 	skip_lines(tab[3], tree->parsing.fd);
-	assign_lab_lines(tab[0], tab[1], tab[2], tree);
+	assign_map_lines(tab[0], tab[1], tab[2], tree);
 	verify_labyrinth(tab[1], tab[0], tree);
 }
 
-void	assign_lab_lines(int line, int line_len, int left_shift, t_tree *tree)
+void	assign_map_lines(int line, int line_len, int left_shift, t_tree *tree)
 {
 	int		x;
 	int		j;
@@ -137,8 +137,7 @@ void	verify_labyrinth(int line_len, int line, t_tree *tree)
 		verify_lab_line(x, &starting_pos_count, tab, tree);
 		x++;
 	}
+	printf("start = %i\n", starting_pos_count);
 	if (starting_pos_count != 1)
 		error_central_verify_map(4, tree);
-	tree->parsing.start_dir
-		= tree->parsing.lab[tree->parsing.starting_x][tree->parsing.starting_y];
 }

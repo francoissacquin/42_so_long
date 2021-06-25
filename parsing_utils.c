@@ -52,7 +52,7 @@ size_t	ft_strlen_array(char **array)
 /*
 ** same thing here, we make a small int tab to host 2 variables into one for
 ** norm reasons
-** tab[0] = line_len or len : maximum length line of the map. 
+** tab[0] = line_len or len : maximum length line of the map.
 ** Is used as map width.
 ** tab[1] = line : number of lines of the map. Is used as map height.
 */

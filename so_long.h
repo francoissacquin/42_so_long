@@ -38,8 +38,8 @@ void	init_struc(t_tree *tree);
 // map_parsing :
 void	map_parsing(t_tree *tree);
 void	map_parsing_plus(char *str, int *biggest_len, int *left_shift, t_tree *tree);
-void	assign_labyrinth(int *tab, t_tree *tree);
-void	assign_lab_lines(int line, int line_len, int left_shift, t_tree *tree);
+void	assign_map(int *tab, t_tree *tree);
+void	assign_map_lines(int line, int line_len, int left_shift, t_tree *tree);
 void	verify_labyrinth(int line_len, int line, t_tree *tree);
 
 // parsing_utils united functions :
@@ -78,5 +78,9 @@ void	error_central_verify_map(int index, t_tree *tree);
 void	error_message_parsing(int index);
 void	error_message_map_parsing(int index, t_tree *tree);
 void	error_message_verify_map(int index);
+
+// closing utils functions :
+void	free_struc_labyrinth(t_tree *tree);
+char	**send_help(char const **split, int abs);
 
 #endif

@@ -12,7 +12,7 @@ int		main(int argc, char **argv)
 	init_struc(&tree);
 	map_parsing(&tree);
 	i = 0;
-	fd = open((char const *)tree->parsing.file_path, O_RDONLY);
+	fd = open((char const *)tree.parsing.file_path, O_RDONLY);
 	i = get_next_line(fd, &str);
 	while (i > 0)
 	{

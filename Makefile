@@ -15,7 +15,8 @@ SRCS = ./main.c\
  ./map_parsing.c\
  ./parsing_utils.c\
  ./parsing_utils_2.c\
- ./wall_checks.c
+ ./wall_checks.c\
+ ./closing_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

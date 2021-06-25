@@ -11,7 +11,7 @@ void	verify_file(int arg_num, char **arg, t_tree *tree)
 		error_central_general(1);
 	while (arg[1][i])
 		i++;
-	if (!(&arg[1][i - 4] == ft_strnstr((char const *)arg[1], ".cub", i)))
+	if (!(&arg[1][i - 4] == ft_strnstr((char const *)arg[1], ".ber", i)))
 		error_central_general(2);
 	tree->parsing.file_path = (char *)malloc(sizeof(char) * (i + 3));
 	tree->parsing.file_path[0] = '.';

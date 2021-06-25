@@ -38,3 +38,4 @@ void	error_message_verify_map(int index)
 		printf("Error\npart of the labyrinth is not reachable for the player\n");
 	else if (index == 6)
 		printf("Error\nmissing information in the .cub file\n");
+}
