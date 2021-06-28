@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/28 11:46:28 by fsacquin          #+#    #+#             */
+/*   Updated: 2021/06/28 11:51:44 by fsacquin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -24,6 +36,8 @@ typedef struct s_parsing_results
 	int			starting_x;
 	int			starting_y;
 	int			fd;
+	int			coll_count;
+	int			exit_count;
 }				t_par_res;
 
 typedef struct	s_tree

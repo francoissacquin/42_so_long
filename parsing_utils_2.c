@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils_2.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/28 11:42:02 by fsacquin          #+#    #+#             */
+/*   Updated: 2021/06/28 11:57:04 by fsacquin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	skip_lines(int start_line, int fd)
@@ -48,6 +60,10 @@ void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree)
 			tree->parsing.starting_x = x;
 			tree->parsing.starting_y = y;
 		}
+		else if (ft_strrchr("C", tree->parsing.lab[x][y]))
+			tree->parsing.coll_count++;
+		else if (ft_strrchr("E", tree->parsing.lab[x][y]))
+			tree->parsing.exit_count++;
 		y++;
 	}
 }

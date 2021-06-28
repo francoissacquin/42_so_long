@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_parsing.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/28 11:43:20 by fsacquin          #+#    #+#             */
+/*   Updated: 2021/06/28 12:01:30 by fsacquin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 /*
@@ -18,7 +30,7 @@ void	map_parsing(t_tree *tree)
 	if (tree->parsing.fd == -1)
 		error_central_parsing(1, tree);
 	i = 0;
-	tab[0] = 0;
+	tab[0] = 1;
 	tab[1] = 0;
 	tab[2] = 0;
 	str = 0;
@@ -83,7 +95,6 @@ void	assign_map(int *tab, t_tree *tree)
 	if (tree->parsing.lab == NULL)
 		error_central_map_parsing(3, 0, tree);
 	tree->parsing.lab[tab[0]] = NULL;
-	skip_lines(tab[3], tree->parsing.fd);
 	assign_map_lines(tab[0], tab[1], tab[2], tree);
 	verify_labyrinth(tab[1], tab[0], tree);
 }
@@ -97,7 +108,7 @@ void	assign_map_lines(int line, int line_len, int left_shift, t_tree *tree)
 
 	str = 0;
 	x = 0;
-	while ((get_next_line(tree->parsing.fd, &str)) > 0 && x < line)
+	while ((get_next_line(tree->parsing.fd, &str)) >= 0 && x < line)
 	{
 		tree->parsing.lab[x] = (char *)malloc(sizeof(char)
 				* ((line_len - left_shift) + 2));
@@ -129,6 +140,8 @@ void	verify_labyrinth(int line_len, int line, t_tree *tree)
 	int		tab[2];
 
 	starting_pos_count = 0;
+	tree->parsing.coll_count = 0;
+	tree->parsing.exit_count = 0;
 	x = 0;
 	tab[0] = line_len;
 	tab[1] = line;
@@ -137,7 +150,10 @@ void	verify_labyrinth(int line_len, int line, t_tree *tree)
 		verify_lab_line(x, &starting_pos_count, tab, tree);
 		x++;
 	}
-	printf("start = %i\n", starting_pos_count);
 	if (starting_pos_count != 1)
 		error_central_verify_map(4, tree);
+	if (tree->parsing.coll_count < 1)
+		error_central_verify_map(7, tree);
+	if (tree->parsing.exit_count != 1)
+		error_central_verify_map(8, tree);
 }

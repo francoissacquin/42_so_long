@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_message.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/28 11:44:34 by fsacquin          #+#    #+#             */
+/*   Updated: 2021/06/28 12:01:31 by fsacquin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	error_message_parsing(int index)
@@ -37,5 +49,9 @@ void	error_message_verify_map(int index)
 	else if (index == 5)
 		printf("Error\npart of the labyrinth is not reachable for the player\n");
 	else if (index == 6)
-		printf("Error\nmissing information in the .cub file\n");
+		printf("Error\nmissing information in the .ber file\n");
+	else if (index == 7)
+		printf("Error\nnumber of map collectibles less than one\n");
+	else if (index == 8)
+		printf("Error\nless than or more than one exit\n");
 }
