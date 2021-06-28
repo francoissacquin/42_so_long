@@ -42,3 +42,21 @@ void	init_struc(t_tree *tree)
 	tree->parsing.starting_x = 0;
 	tree->parsing.starting_y = 0;
 }
+
+void	set_screen_resolution(t_tree *tree)
+{
+	tree->parsing.res_x = 1920;
+	tree->parsing.res_y = 1080;
+}
+
+void	init_vars(t_tree *tree)
+{
+	tree->vars.right = 0;
+	tree->vars.left = 0;
+	tree->vars.up = 0;
+	tree->vars.down = 0;
+	tree->image.play_x = tree->starting_y + 0.5;
+	tree->image.play_y = ft_strlen(tree->parsing.lab) - tree->starting_x - 0.5;
+	tree->parsing.lab[tree->parsing.starting_x][tree->parsing.starting_y] = '0';
+	tree->image.move_count = 0;
+}

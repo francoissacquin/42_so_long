@@ -28,7 +28,11 @@ SRCS = ./main.c\
  ./parsing_utils.c\
  ./parsing_utils_2.c\
  ./wall_checks.c\
- ./closing_utils.c
+ ./closing_utils.c\
+ ./screen_manager.c\
+ ./key_manager.c\
+ ./key_movement.c\
+ ./map_drawer.c
 
 OBJS = $(SRCS:.c=.o)
 

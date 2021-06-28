@@ -34,3 +34,23 @@ char	**send_help(char const **split, int abs)
 	free((void*)split);
 	return (NULL);
 }
+
+int	ft_close(t_tree *tree)
+{
+	if (tree->image.img != 0)
+		mlx_destroy_image(tree->vars.mlx, tree->image.img);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_P);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_C);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_E);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_1);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_0);
+	mlx_destroy_window(tree->vars.mlx, tree->vars.win);
+	mlx_destroy_display(tree->vars.mlx);
+	mlx_loop_end(&tree->vars);
+	free(tree->vars.mlx);
+	free_struc_labyrinth(tree);
+	free_struc_texture_paths(tree);
+	free(tree->parsing.file_path);
+	exit(EXIT_SUCCESS);
+	return (0);
+}
