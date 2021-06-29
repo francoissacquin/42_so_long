@@ -102,6 +102,7 @@ typedef struct	s_tree
 void	verify_file(int arg_num, char **arg, t_tree *tree);
 void	init_struc(t_tree *tree);
 void	set_screen_resolution(t_tree *tree);
+void	init_vars(t_tree *tree);
 
 // map_parsing :
 void	map_parsing(t_tree *tree);
@@ -166,11 +167,13 @@ void	error_central_general(int index);
 void	error_central_parsing(int index, t_tree *tree);
 void	error_central_map_parsing(int index, char *str, t_tree *tree);
 void	error_central_verify_map(int index, t_tree *tree);
+void	error_central_tex(int index, t_tree *tree);
 
 //error_message functions :
 void	error_message_parsing(int index);
 void	error_message_map_parsing(int index, t_tree *tree);
 void	error_message_verify_map(int index);
+void	error_message_tex(int index);
 
 // closing utils functions :
 void	free_struc_labyrinth(t_tree *tree);

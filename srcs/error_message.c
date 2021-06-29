@@ -55,3 +55,23 @@ void	error_message_verify_map(int index)
 	else if (index == 8)
 		printf("Error\nless than or more than one exit\n");
 }
+
+void	error_message_tex(int index)
+{
+	if (index == 1)
+		printf("Error\nwrong texture format, not an XPM file\n");
+	else if (index == 2)
+		printf("Error\nno static char  * decalaration found in XPM file\n");
+	else if (index == 3)
+		printf("Error\nerror with color keys in XPM file\n");
+	else if (index == 4)
+		printf("Error\ninvalid color value in texture\n");
+	else if (index == 5)
+		printf("Error\nkey without corresponding color in xpm file\n");
+	else if (index == 6)
+		printf("Error\nunable to open texture (maybe wrong texture path)\n");
+	else if (index == 7)
+		printf("Error\ntransition from image to texture failed\n");
+	else if (index == 8)
+		printf("Error\nfailed to tranform texture *img to *xpm pointer\n");
+}

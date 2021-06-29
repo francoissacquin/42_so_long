@@ -69,3 +69,25 @@ void	error_central_verify_map(int index, t_tree *tree)
 	free_struc_labyrinth(tree);
 	exit(EXIT_SUCCESS);
 }
+
+void	error_central_tex(int index, t_tree *tree)
+{
+	error_message_tex(index);
+	if (!(tree->texture.img_P == 0))
+		mlx_destroy_image(tree->vars.mlx, tree->texture.img_P);
+	if (!(tree->texture.img_C == 0))
+		mlx_destroy_image(tree->vars.mlx, tree->texture.img_C);
+	if (!(tree->texture.img_E == 0))
+		mlx_destroy_image(tree->vars.mlx, tree->texture.img_E);
+	if (!(tree->texture.img_1 == 0))
+		mlx_destroy_image(tree->vars.mlx, tree->texture.img_1);
+	if (!(tree->texture.img_0 == 0))
+		mlx_destroy_image(tree->vars.mlx, tree->texture.img_0);
+	if (tree->image.img != 0)
+		mlx_destroy_image(tree->vars.mlx, tree->vars.mlx);
+	mlx_destroy_display(tree->vars.mlx);
+	free(tree->vars.mlx);
+	free_struc_texture_paths(tree);
+	free_struc_labyrinth(tree);
+	free(tree->parsing.file_path);
+	exit(EXIT_SUCCESS);
