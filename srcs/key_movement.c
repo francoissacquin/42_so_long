@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../so_long.h"
 
 void	go_right(t_tree *tree)
 {

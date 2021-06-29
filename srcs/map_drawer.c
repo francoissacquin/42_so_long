@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../so_long.h"
 
 void	divide_and_drawer(t_tree *tree)
 {

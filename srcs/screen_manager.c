@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../so_long.h"
 
 int	screen_manager(t_tree *tree)
 {

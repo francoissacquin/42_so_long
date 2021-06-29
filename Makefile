@@ -45,7 +45,7 @@ valgrind	: all
 				valgrind --leak-check=full --show-leak-kinds=all ./so_long maps/default.ber
 
 $(NAME)		: $(MLX_FILE) $(OBJS)
-				gcc -o $(NAME) $(SRCS) $(MLX_FILE) $(CFLAGS) -I./
+				gcc -o $(NAME) $(SRCS) $(MLX_FILE) $(CFLAGS) -I$(HEADER)
 
 clean		:
 				rm -rf $(OBJS)

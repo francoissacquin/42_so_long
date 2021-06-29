@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	extract_tex(void **img, int **xpm, char *path, t_tree *tree)
 {
