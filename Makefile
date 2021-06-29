@@ -6,7 +6,7 @@
 #    By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/28 11:45:48 by fsacquin          #+#    #+#              #
-#    Updated: 2021/06/28 11:45:52 by fsacquin         ###   ########.fr        #
+#    Updated: 2021/06/29 11:53:17 by fsacquin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,21 +18,21 @@ CFLAGS = -lXext -lX11 -lm -Werror -Wextra -Wall -g3
 
 HEADER = ./so_long.h
 
-SRCS = ./main.c\
- ./init_utils.c\
- ./error_central.c\
- ./error_message.c\
- ./get_next_line.c\
- ./get_next_line_utils.c\
- ./map_parsing.c\
- ./parsing_utils.c\
- ./parsing_utils_2.c\
- ./wall_checks.c\
- ./closing_utils.c\
- ./screen_manager.c\
- ./key_manager.c\
- ./key_movement.c\
- ./map_drawer.c
+SRCS = ./srcs/main.c\
+ ./srcs/init_utils.c\
+ ./srcs/error_central.c\
+ ./srcs/error_message.c\
+ ./srcs/get_next_line.c\
+ ./srcs/get_next_line_utils.c\
+ ./srcs/map_parsing.c\
+ ./srcs/parsing_utils.c\
+ ./srcs/parsing_utils_2.c\
+ ./srcs/wall_checks.c\
+ ./srcs/closing_utils.c\
+ ./srcs/screen_manager.c\
+ ./srcs/key_manager.c\
+ ./srcs/key_movement.c\
+ ./srcs/map_drawer.c
 
 OBJS = $(SRCS:.c=.o)
 
