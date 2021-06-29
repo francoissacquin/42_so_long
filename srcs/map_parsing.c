@@ -30,7 +30,7 @@ void	map_parsing(t_tree *tree)
 	if (tree->parsing.fd == -1)
 		error_central_parsing(1, tree);
 	i = 0;
-	tab[0] = 1;
+	tab[0] = 0;
 	tab[1] = 0;
 	tab[2] = 0;
 	str = 0;
@@ -96,7 +96,7 @@ void	assign_map(int *tab, t_tree *tree)
 		error_central_map_parsing(3, 0, tree);
 	tree->parsing.lab[tab[0]] = NULL;
 	tree->image.map_x = tab[0];
-	tree->image.map_y = tab[1];
+	tree->image.map_y = tab[1] + 1;
 	assign_map_lines(tab[0], tab[1], tab[2], tree);
 	verify_labyrinth(tab[1], tab[0], tree);
 }

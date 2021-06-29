@@ -87,7 +87,7 @@ void	error_central_tex(int index, t_tree *tree)
 		mlx_destroy_image(tree->vars.mlx, tree->vars.mlx);
 	mlx_destroy_display(tree->vars.mlx);
 	free(tree->vars.mlx);
-	free_struc_texture_paths(tree);
 	free_struc_labyrinth(tree);
 	free(tree->parsing.file_path);
 	exit(EXIT_SUCCESS);
+}

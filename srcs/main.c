@@ -37,9 +37,9 @@ void	conveyor_tex(t_tree *tree)
 	tree->texture.tex_1 = 0;
 	tree->texture.tex_0 = 0;
 	extract_tex(&tree->texture.img_P, &tree->texture.tex_P, "textures/eagle.xpm", tree);
-	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/doggo.xpm", tree);
+	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/mossy.xpm", tree);
 	extract_tex(&tree->texture.img_E, &tree->texture.tex_E, "textures/purplestone.xpm", tree);
-	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/metal.xpm", tree);
+	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/redbrick.xpm", tree);
 	extract_tex(&tree->texture.img_0, &tree->texture.tex_0, "textures/wood.xpm", tree);
 }
 
@@ -64,7 +64,6 @@ int		main(int argc, char **argv)
 	init_vars(&tree);
 	screen_manager(&tree);
 	mlx_hook(tree.vars.win, 2, 1L << 0, &key_hook, &tree);
-	mlx_hook(tree.vars.win, 3, 1L << 1, &key_release_hook, &tree);
 	mlx_hook(tree.vars.win, 33, 0L, ft_close, &tree);
 	mlx_loop_hook(tree.vars.mlx, &screen_manager_2, &tree);
 	mlx_do_sync(tree.vars.mlx);

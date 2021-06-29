@@ -135,8 +135,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 // key manager and stuff :
 int		key_hook(int keycode, t_tree *tree);
-int		key_release_hook(int keycode, t_tree *tree);
-void	ft_translate_player(t_tree *tree);
 void	go_right(t_tree *tree);
 void	go_left(t_tree *tree);
 void	go_up(t_tree *tree);
@@ -148,6 +146,7 @@ void	draw_wall(t_tree *tree);
 void	draw_space(t_tree *tree);
 void	draw_collectible(t_tree *tree);
 void	draw_exit(t_tree *tree);
+void	draw_player(t_tree *tree);
 
 // get_next_line :
 int		get_next_line(int fd, char **line);
@@ -176,6 +175,7 @@ void	error_message_verify_map(int index);
 void	error_message_tex(int index);
 
 // closing utils functions :
+void	victory_screen(t_tree *tree);
 void	free_struc_labyrinth(t_tree *tree);
 char	**send_help(char const **split, int abs);
 int		ft_close(t_tree *tree);

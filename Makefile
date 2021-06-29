@@ -44,8 +44,9 @@ $(MLX_FILE)	:
 valgrind	: all
 				valgrind --leak-check=full --show-leak-kinds=all ./so_long maps/default.ber
 
-$(NAME)		: $(MLX_FILE) $(OBJS)
-				gcc -o $(NAME) $(SRCS) $(MLX_FILE) $(CFLAGS) -I$(HEADER)
+$(NAME)		: $(OBJS)
+				make --no-print-directory -C mlx_linux all
+				gcc -o $(NAME) $(SRCS) ./mlx_linux/libmlx_Linux.a $(CFLAGS) -I./
 
 clean		:
 				rm -rf $(OBJS)

@@ -49,7 +49,6 @@ int	ft_close(t_tree *tree)
 	mlx_loop_end(&tree->vars);
 	free(tree->vars.mlx);
 	free_struc_labyrinth(tree);
-	free_struc_texture_paths(tree);
 	free(tree->parsing.file_path);
 	exit(EXIT_SUCCESS);
 	return (0);
