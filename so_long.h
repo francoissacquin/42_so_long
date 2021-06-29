@@ -141,6 +141,13 @@ void	go_left(t_tree *tree);
 void	go_up(t_tree *tree);
 void	go_down(t_tree *tree);
 
+// map drawer and all cool functions :
+void	divide_and_drawer(t_tree *tree);
+void	draw_wall(t_tree *tree);
+void	draw_space(t_tree *tree);
+void	draw_collectible(t_tree *tree);
+void	draw_exit(t_tree *tree);
+
 // get_next_line :
 int		get_next_line(int fd, char **line);
 int		finish_line(char *str, char **line);
