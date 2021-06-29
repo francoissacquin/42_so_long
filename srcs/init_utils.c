@@ -55,8 +55,8 @@ void	init_vars(t_tree *tree)
 	tree->vars.left = 0;
 	tree->vars.up = 0;
 	tree->vars.down = 0;
-	tree->image.play_x = tree->starting_y + 0.5;
-	tree->image.play_y = ft_strlen(tree->parsing.lab) - tree->starting_x - 0.5;
-	tree->parsing.lab[tree->parsing.starting_x][tree->parsing.starting_y] = '0';
+	tree->image.play_x = tree->starting_x;
+	tree->image.play_y = tree->starting_y;
+	tree->parsing.lab[tree->image.play_x][tree->image.play_y] = '0';
 	tree->image.move_count = 0;
 }

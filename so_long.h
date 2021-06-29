@@ -71,8 +71,8 @@ typedef struct s_data
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
-	double		play_x;
-	double		play_y;
+	int			play_x;
+	int			play_y;
 	int			map_x;
 	int			map_y;
 	int			move_count;
@@ -84,8 +84,8 @@ typedef struct s_draw
 	int			y;
 	int			x_max;
 	int			y_max;
-	double		tex_x;
-	double		tex_y;
+	int			tex_x;
+	int			tex_y;
 	int			color;
 }				t_draw;
 
