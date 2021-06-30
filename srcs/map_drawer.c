@@ -50,12 +50,12 @@ void	draw_wall(t_tree *tree)
 	x = tree->draw.x;
 	while (x <= tree->draw.x_max)
 	{
-		tree->draw.tex_x = ((x - tree->draw.x) * 64) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
 		y = tree->draw.y;
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 64) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_1[64 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_1[160 * tree->draw.tex_y + tree->draw.tex_x];
 			//printf("tex_x et tex_ y = %i %i, x et y = %i %i x_max et y_max = %i %i\n", tree->draw.tex_x, tree->draw.tex_y, x, y, tree->draw.x_max, tree->draw.y_max);
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
@@ -95,11 +95,11 @@ void	draw_collectible(t_tree *tree)
 	while (x <= tree->draw.x_max)
 	{
 		y = tree->draw.y;
-		tree->draw.tex_x = ((x - tree->draw.x) * 64) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 64) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_C[64 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_C[160 * tree->draw.tex_y + tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
@@ -116,11 +116,11 @@ void	draw_exit(t_tree *tree)
 	while (x <= tree->draw.x_max)
 	{
 		y = tree->draw.y;
-		tree->draw.tex_x = ((x - tree->draw.x) * 64) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 64) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_E[64 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_E[160 * tree->draw.tex_y + tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}

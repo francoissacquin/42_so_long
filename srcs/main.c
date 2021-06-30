@@ -37,9 +37,9 @@ void	conveyor_tex(t_tree *tree)
 	tree->texture.tex_1 = 0;
 	tree->texture.tex_0 = 0;
 	extract_tex(&tree->texture.img_P, &tree->texture.tex_P, "textures/eagle.xpm", tree);
-	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/mossy.xpm", tree);
-	extract_tex(&tree->texture.img_E, &tree->texture.tex_E, "textures/purplestone.xpm", tree);
-	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/redbrick.xpm", tree);
+	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/mine_diamond.xpm", tree);
+	extract_tex(&tree->texture.img_E, &tree->texture.tex_E, "textures/mine_exit.xpm", tree);
+	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/mine_wall.xpm", tree);
 	extract_tex(&tree->texture.img_0, &tree->texture.tex_0, "textures/mine_stone.xpm", tree);
 }
 
