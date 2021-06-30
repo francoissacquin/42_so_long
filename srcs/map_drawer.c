@@ -6,7 +6,7 @@
 /*   By: fsacquin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:18:33 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/30 15:18:36 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/06/30 18:10:36 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	draw_wall(t_tree *tree)
 		{
 			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
 			tree->draw.color = tree->texture.tex_1[160 * tree->draw.tex_y + tree->draw.tex_x];
-			//printf("tex_x et tex_ y = %i %i, x et y = %i %i x_max et y_max = %i %i\n", tree->draw.tex_x, tree->draw.tex_y, x, y, tree->draw.x_max, tree->draw.y_max);
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
@@ -141,11 +140,11 @@ void	draw_player(t_tree *tree)
 	while (x <= tree->draw.x_max)
 	{
 		y = tree->draw.y;
-		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 792) / (tree->draw.x_max - tree->draw.x);
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_P[160 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 1008) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_P[1008 * tree->draw.tex_y + tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
