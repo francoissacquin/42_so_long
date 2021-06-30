@@ -6,7 +6,7 @@
 /*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:45:34 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/28 11:45:37 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/06/30 17:35:57 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	conveyor_tex(t_tree *tree)
 	tree->texture.tex_E = 0;
 	tree->texture.tex_1 = 0;
 	tree->texture.tex_0 = 0;
-	extract_tex(&tree->texture.img_P, &tree->texture.tex_P, "textures/eagle.xpm", tree);
+	extract_tex(&tree->texture.img_P, &tree->texture.tex_P, "textures/mine_player.xpm", tree);
 	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/mine_diamond.xpm", tree);
 	extract_tex(&tree->texture.img_E, &tree->texture.tex_E, "textures/mine_exit.xpm", tree);
 	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/mine_wall.xpm", tree);
