@@ -40,7 +40,7 @@ void	conveyor_tex(t_tree *tree)
 	extract_tex(&tree->texture.img_C, &tree->texture.tex_C, "textures/mossy.xpm", tree);
 	extract_tex(&tree->texture.img_E, &tree->texture.tex_E, "textures/purplestone.xpm", tree);
 	extract_tex(&tree->texture.img_1, &tree->texture.tex_1, "textures/redbrick.xpm", tree);
-	extract_tex(&tree->texture.img_0, &tree->texture.tex_0, "textures/wood.xpm", tree);
+	extract_tex(&tree->texture.img_0, &tree->texture.tex_0, "textures/mine_stone.xpm", tree);
 }
 
 int		main(int argc, char **argv)

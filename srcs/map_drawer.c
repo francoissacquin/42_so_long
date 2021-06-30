@@ -72,12 +72,12 @@ void	draw_space(t_tree *tree)
 	x = tree->draw.x;
 	while (x <= tree->draw.x_max)
 	{
-		tree->draw.tex_x = ((x - tree->draw.x) * 64) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
 		y = tree->draw.y;
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 64) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_0[64 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_0[160 * tree->draw.tex_y + tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
