@@ -141,11 +141,11 @@ void	draw_player(t_tree *tree)
 	while (x <= tree->draw.x_max)
 	{
 		y = tree->draw.y;
-		tree->draw.tex_x = ((x - tree->draw.x) * 64) / (tree->draw.x_max - tree->draw.x);
+		tree->draw.tex_x = ((x - tree->draw.x) * 160) / (tree->draw.x_max - tree->draw.x);
 		while (y <= tree->draw.y_max)
 		{
-			tree->draw.tex_y = ((y - tree->draw.y) * 64) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_P[64 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.tex_y = ((y - tree->draw.y) * 160) / (tree->draw.y_max - tree->draw.y);
+			tree->draw.color = tree->texture.tex_P[160 * tree->draw.tex_y + tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
