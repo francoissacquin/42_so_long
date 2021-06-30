@@ -24,6 +24,8 @@ void	go_right(t_tree *tree)
 		if (tree->parsing.lab[tree->image.play_x][tree->image.play_y - 1] == 'E' && tree->parsing.coll_count == 0)
 			victory_screen(tree);
 		tree->image.play_y = tree->image.play_y - 1;
+		tree->image.move_count++;
+		printf("move count = %i\n", tree->image.move_count);
 	}
 }
 
@@ -39,6 +41,8 @@ void	go_up(t_tree *tree)
 		if (tree->parsing.lab[tree->image.play_x - 1][tree->image.play_y] == 'E' && tree->parsing.coll_count == 0)
 			victory_screen(tree);
 		tree->image.play_x = tree->image.play_x - 1;
+		tree->image.move_count++;
+		printf("move count = %i\n", tree->image.move_count);
 	}
 }
 
@@ -54,6 +58,8 @@ void	go_left(t_tree *tree)
 		if (tree->parsing.lab[tree->image.play_x][tree->image.play_y + 1] == 'E' && tree->parsing.coll_count == 0)
 			victory_screen(tree);
 		tree->image.play_y = tree->image.play_y + 1;
+		tree->image.move_count++;
+		printf("move count = %i\n", tree->image.move_count);
 	}
 }
 
@@ -69,5 +75,7 @@ void	go_down(t_tree *tree)
 		if (tree->parsing.lab[tree->image.play_x + 1][tree->image.play_y] == 'E' && tree->parsing.coll_count == 0)
 			victory_screen(tree);
 		tree->image.play_x = tree->image.play_x + 1;
+		tree->image.move_count++;
+		printf("move count = %i\n", tree->image.move_count);
 	}
 }
