@@ -6,7 +6,7 @@
 /*   By: fsacquin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:18:33 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/30 18:10:36 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/07/01 00:37:34 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,11 +141,12 @@ void	draw_player(t_tree *tree)
 	{
 		y = tree->draw.y;
 		tree->draw.tex_x = ((x - tree->draw.x) * 792) / (tree->draw.x_max - tree->draw.x);
-		while (y <= tree->draw.y_max)
+		while (y < tree->draw.y_max)
 		{
 			tree->draw.tex_y = ((y - tree->draw.y) * 1008) / (tree->draw.y_max - tree->draw.y);
-			tree->draw.color = tree->texture.tex_P[1008 * tree->draw.tex_y + tree->draw.tex_x];
-			my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
+			tree->draw.color = tree->texture.tex_P[792 * tree->draw.tex_y + tree->draw.tex_x];
+			if (tree->draw.color >= 0)
+				my_mlx_pixel_put(&tree->image, x, y, tree->draw.color);
 			y++;
 		}
 		x++;
