@@ -6,7 +6,7 @@
 /*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:45:25 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/28 11:45:28 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:13:21 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	verify_file(int arg_num, char **arg, t_tree *tree)
 	int		j;
 
 	i = 0;
+	tree->parsing.file_path = 0;
 	if (arg_num != 2)
 		error_central_general(1);
 	while (arg[1][i])
@@ -41,6 +42,7 @@ void	init_struc(t_tree *tree)
 	tree->parsing.lab = 0;
 	tree->parsing.starting_x = 0;
 	tree->parsing.starting_y = 0;
+	tree->image.img = 0;
 }
 
 void	set_screen_resolution(t_tree *tree)

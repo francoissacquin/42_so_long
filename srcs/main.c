@@ -6,7 +6,7 @@
 /*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:45:34 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/30 18:08:17 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:13:55 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	extract_tex(void **img, int **xpm, char *path, t_tree *tree)
 {
 	int		tab[5];
 
+	*img = 0;
 	*img = mlx_xpm_file_to_image(tree->vars.mlx, path, &tab[0], &tab[1]);
 	if (*img == NULL)
 		error_central_tex(6, tree);
+	*xpm = 0;
 	*xpm = (int *)mlx_get_data_addr(*img, &tab[2], &tab[3], &tab[4]);
 	if (*xpm == NULL)
 		error_central_tex(8, tree);

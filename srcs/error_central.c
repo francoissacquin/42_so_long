@@ -6,7 +6,7 @@
 /*   By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:44:20 by fsacquin          #+#    #+#             */
-/*   Updated: 2021/06/28 11:44:24 by fsacquin         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:02:09 by fsacquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	error_central_parsing(int index, t_tree *tree)
 {
 	error_message_parsing(index);
 	close(tree->parsing.fd);
+	if (tree->parsing.file_path != 0)
+		free(tree->parsing.file_path);
 	exit(EXIT_SUCCESS);
 }
 
@@ -47,6 +49,8 @@ void	error_central_map_parsing(int index, char *str, t_tree *tree)
 		free(str);
 	if (tree->parsing.fd != 0)
 		close(tree->parsing.fd);
+	if (tree->parsing.file_path != 0)
+		free(tree->parsing.file_path);
 	exit(EXIT_SUCCESS);
 }
 
@@ -66,6 +70,8 @@ void	error_central_verify_map(int index, t_tree *tree)
 		free(str);
 		str = 0;
 	}
+	if (tree->parsing.file_path != 0)
+		free(tree->parsing.file_path);
 	free_struc_labyrinth(tree);
 	exit(EXIT_SUCCESS);
 }

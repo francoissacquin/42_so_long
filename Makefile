@@ -6,7 +6,7 @@
 #    By: fsacquin <fsacquin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/28 11:45:48 by fsacquin          #+#    #+#              #
-#    Updated: 2021/06/29 11:53:17 by fsacquin         ###   ########.fr        #
+#    Updated: 2021/07/04 15:03:23 by fsacquin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(MLX_FILE)	:
 				make --no-print-directory -C mlx_linux all
 
 valgrind	: all
-				valgrind --leak-check=full --show-leak-kinds=all ./so_long maps/default.ber
+				valgrind --leak-check=full --show-leak-kinds=all ./so_long maps/small_map.ber
 
 $(NAME)		: $(OBJS)
 				make --no-print-directory -C mlx_linux all
