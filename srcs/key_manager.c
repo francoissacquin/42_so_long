@@ -26,7 +26,8 @@ int	key_hook(int keycode, t_tree *tree)
 			go_left(tree);
 		if (keycode == 115)
 			go_down(tree);
-		screen_manager(tree);
+		if (tree->parsing.v_gate == 1)
+			screen_manager(tree);
 	}
 	return (0);
 }

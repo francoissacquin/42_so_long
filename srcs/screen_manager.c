@@ -68,5 +68,4 @@ void	victory_screen(t_tree *tree)
 		}
 		i++;
 	}
-	
 }

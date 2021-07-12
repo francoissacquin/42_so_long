@@ -44,6 +44,7 @@ int	ft_close(t_tree *tree)
 	mlx_destroy_image(tree->vars.mlx, tree->texture.img_E);
 	mlx_destroy_image(tree->vars.mlx, tree->texture.img_1);
 	mlx_destroy_image(tree->vars.mlx, tree->texture.img_0);
+	mlx_destroy_image(tree->vars.mlx, tree->texture.img_V);
 	mlx_destroy_window(tree->vars.mlx, tree->vars.win);
 	mlx_destroy_display(tree->vars.mlx);
 	mlx_loop_end(&tree->vars);
