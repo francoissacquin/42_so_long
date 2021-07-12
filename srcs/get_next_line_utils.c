@@ -71,6 +71,7 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	ptr[i + j] = '\0';
 	return (ptr);
 }
+
 char	*ft_strrchr(const char *str, int c)
 {
 	int				i;

@@ -14,13 +14,7 @@
 
 int	screen_manager(t_tree *tree)
 {
-	if (tree->image.img != 0)
-		mlx_destroy_image(tree->vars.mlx, tree->image.img);
-	tree->image.img = mlx_new_image(tree->vars.mlx,
-			tree->parsing.res_x, tree->parsing.res_y);
-	tree->image.addr = mlx_get_data_addr(tree->image.img,
-			&tree->image.bits_per_pixel, &tree->image.line_length,
-			&tree->image.endian);
+	delete_and_create_img(tree);
 	divide_and_drawer(tree);
 	return (0);
 }
@@ -46,13 +40,7 @@ void	victory_screen(t_tree *tree)
 	int		j;
 
 	tree->parsing.v_gate = 0;
-	if (tree->image.img != 0)
-		mlx_destroy_image(tree->vars.mlx, tree->image.img);
-	tree->image.img = mlx_new_image(tree->vars.mlx,
-			tree->parsing.res_x, tree->parsing.res_y);
-	tree->image.addr = mlx_get_data_addr(tree->image.img,
-			&tree->image.bits_per_pixel, &tree->image.line_length,
-			&tree->image.endian);
+	delete_and_create_img(tree);
 	i = 0;
 	j = 0;
 	while (i < tree->parsing.res_x)
@@ -62,10 +50,22 @@ void	victory_screen(t_tree *tree)
 		while (j < tree->parsing.res_y)
 		{
 			tree->draw.tex_y = (j * 328) / tree->parsing.res_y;
-			tree->draw.color = tree->texture.tex_V[512 * tree->draw.tex_y + tree->draw.tex_x];
+			tree->draw.color = tree->texture.tex_V[512 * tree->draw.tex_y
+				+ tree->draw.tex_x];
 			my_mlx_pixel_put(&tree->image, i, j, tree->draw.color);
 			j++;
 		}
 		i++;
 	}
+}
+
+void	delete_and_create_img(t_tree *tree)
+{
+	if (tree->image.img != 0)
+		mlx_destroy_image(tree->vars.mlx, tree->image.img);
+	tree->image.img = mlx_new_image(tree->vars.mlx,
+			tree->parsing.res_x, tree->parsing.res_y);
+	tree->image.addr = mlx_get_data_addr(tree->image.img,
+			&tree->image.bits_per_pixel, &tree->image.line_length,
+			&tree->image.endian);
 }

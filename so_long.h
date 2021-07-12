@@ -92,7 +92,7 @@ typedef struct s_draw
 	int			color;
 }				t_draw;
 
-typedef struct	s_tree
+typedef struct s_tree
 {
 	t_par_res	parsing;
 	t_vars		vars;
@@ -109,7 +109,8 @@ void	init_vars(t_tree *tree);
 
 // map_parsing :
 void	map_parsing(t_tree *tree);
-void	map_parsing_plus(char *str, int *biggest_len, int *left_shift, t_tree *tree);
+void	map_parsing_plus(char *str, int *biggest_len, int *left_shift,
+			t_tree *tree);
 void	assign_map(int *tab, t_tree *tree);
 void	assign_map_lines(int line, int line_len, int left_shift, t_tree *tree);
 void	verify_labyrinth(int line_len, int line, t_tree *tree);
@@ -124,6 +125,7 @@ int		s_wall_check(int y, int len, int line, t_tree *tree);
 int		is_char_not_inside_walls(int x, int y, t_tree *tree);
 void	skip_lines(int start_line, int fd);
 void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree);
+void	player_pos_save(int x, int y, int *starting_pos_count);
 char	*ft_strnstr(const char *str, const char *to_find, size_t length);
 void	clear_parsing(char *str, t_tree *tree);
 
@@ -135,6 +137,7 @@ void	extract_tex(void **img, int **xpm, char *path, t_tree *tree);
 int		screen_manager(t_tree *tree);
 int		screen_manager_2(t_tree *tree);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	delete_and_create_img(t_tree *tree);
 
 // key manager and stuff :
 int		key_hook(int keycode, t_tree *tree);
@@ -150,6 +153,7 @@ void	draw_space(t_tree *tree);
 void	draw_collectible(t_tree *tree);
 void	draw_exit(t_tree *tree);
 void	draw_player(t_tree *tree);
+void	draw_player_calc(t_tree *tree);
 
 // get_next_line :
 int		get_next_line(int fd, char **line);

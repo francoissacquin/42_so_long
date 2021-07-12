@@ -32,7 +32,8 @@ SRCS = ./srcs/main.c\
  ./srcs/screen_manager.c\
  ./srcs/key_manager.c\
  ./srcs/key_movement.c\
- ./srcs/map_drawer.c
+ ./srcs/map_drawer.c\
+ ./srcs/player_drawer.c
 
 OBJS = $(SRCS:.c=.o)
 

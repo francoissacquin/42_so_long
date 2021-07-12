@@ -55,17 +55,20 @@ void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree)
 				error_central_verify_map(3, tree);
 		}
 		if (ft_strrchr("P", tree->parsing.lab[x][y]))
-		{
-			(*starting_pos_count)++;
-			tree->parsing.starting_x = x;
-			tree->parsing.starting_y = y;
-		}
+			player_pos_save(x, y, starting_pos_count);
 		else if (ft_strrchr("C", tree->parsing.lab[x][y]))
 			tree->parsing.coll_count++;
 		else if (ft_strrchr("E", tree->parsing.lab[x][y]))
 			tree->parsing.exit_count++;
 		y++;
 	}
+}
+
+void	player_pos_save(int x, int y, int *starting_pos_count)
+{
+	(*starting_pos_count)++;
+	tree->parsing.starting_x = x;
+	tree->parsing.starting_y = y;
 }
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t length)

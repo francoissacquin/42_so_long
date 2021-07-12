@@ -29,9 +29,9 @@ char	**send_help(char const **split, int abs)
 	while (abs > 0)
 	{
 		abs--;
-		free((void*)split[abs]);
+		free((void *)split[abs]);
 	}
-	free((void*)split);
+	free((void *)split);
 	return (NULL);
 }
 

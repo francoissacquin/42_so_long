@@ -57,12 +57,14 @@ void	set_screen_resolution(t_tree *tree)
 		if (tree->image.map_x >= ((56 * tree->image.map_y) / 100))
 		{
 			tree->parsing.res_y = 1080;
-			tree->parsing.res_x = tree->image.map_y * (1080 / tree->image.map_x);
+			tree->parsing.res_x = tree->image.map_y
+				* (1080 / tree->image.map_x);
 		}
 		else
 		{
 			tree->parsing.res_x = 1920;
-			tree->parsing.res_y = tree->image.map_x * (1920 / tree->image.map_y);
+			tree->parsing.res_y = tree->image.map_x
+				* (1920 / tree->image.map_y);
 		}
 	}
 }
