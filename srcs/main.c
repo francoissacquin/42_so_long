@@ -48,18 +48,11 @@ void	conveyor_tex(t_tree *tree)
 int		main(int argc, char **argv)
 {
 	t_tree	tree;
-	int		i;
 
 	verify_file(argc, argv, &tree);
 	init_struc(&tree);
 	map_parsing(&tree);
 	set_screen_resolution(&tree);
-	i = 0;
-	while (tree.parsing.lab[i] != NULL)
-	{
-		printf("//%s\n", tree.parsing.lab[i]);
-		i++;
-	}
 	tree.vars.mlx = mlx_init();
 	conveyor_tex(&tree);
 	tree.vars.win = mlx_new_window(tree.vars.mlx, tree.parsing.res_x, tree.parsing.res_y, "so_long");
