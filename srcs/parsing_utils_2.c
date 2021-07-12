@@ -55,7 +55,7 @@ void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree)
 				error_central_verify_map(3, tree);
 		}
 		if (ft_strrchr("P", tree->parsing.lab[x][y]))
-			player_pos_save(x, y, starting_pos_count);
+			player_pos_save(x, y, starting_pos_count, tree);
 		else if (ft_strrchr("C", tree->parsing.lab[x][y]))
 			tree->parsing.coll_count++;
 		else if (ft_strrchr("E", tree->parsing.lab[x][y]))
@@ -64,7 +64,7 @@ void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree)
 	}
 }
 
-void	player_pos_save(int x, int y, int *starting_pos_count)
+void	player_pos_save(int x, int y, int *starting_pos_count, t_tree *tree)
 {
 	(*starting_pos_count)++;
 	tree->parsing.starting_x = x;

@@ -125,7 +125,7 @@ int		s_wall_check(int y, int len, int line, t_tree *tree);
 int		is_char_not_inside_walls(int x, int y, t_tree *tree);
 void	skip_lines(int start_line, int fd);
 void	verify_lab_line(int x, int *starting_pos_count, int *tab, t_tree *tree);
-void	player_pos_save(int x, int y, int *starting_pos_count);
+void	player_pos_save(int x, int y, int *starting_pos_count, t_tree *tree);
 char	*ft_strnstr(const char *str, const char *to_find, size_t length);
 void	clear_parsing(char *str, t_tree *tree);
 
