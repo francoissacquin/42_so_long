@@ -38,6 +38,7 @@ typedef struct s_parsing_results
 	int			fd;
 	int			coll_count;
 	int			exit_count;
+	int			v_gate;
 }				t_par_res;
 
 typedef struct s_vars
@@ -57,11 +58,13 @@ typedef struct s_texture
 	void	*img_E;
 	void	*img_1;
 	void	*img_0;
+	void	*img_V;
 	int		*tex_P;
 	int		*tex_C;
 	int		*tex_E;
 	int		*tex_1;
 	int		*tex_0;
+	int		*tex_V;
 }				t_tex;
 
 typedef struct s_data

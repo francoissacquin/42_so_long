@@ -79,4 +79,5 @@ void	init_vars(t_tree *tree)
 	tree->parsing.lab[tree->image.play_x][tree->image.play_y] = '0';
 	tree->image.move_count = 0;
 	tree->image.img = 0;
+	tree->parsing.v_gate = 1;
 }
